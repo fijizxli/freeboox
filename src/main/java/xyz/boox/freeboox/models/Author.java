@@ -1,14 +1,14 @@
 package xyz.boox.freeboox.models;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
 @Entity
 public class Author {
     @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
+
     private Integer id;
     private String name;
     private Date dateOfBirth;
