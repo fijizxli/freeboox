@@ -13,7 +13,7 @@ public class Author {
     private Date dateOfBirth;
     private Boolean isAlive;
 
-    @OneToMany
+    @OneToMany(mappedBy = "author")
     private List<Book> books;
 
     public Long getId() {
