@@ -48,19 +48,16 @@ public class Author {
         isAlive = alive;
     }
 
-    public Author(Integer id, String name) {
-        this.id = id;
+    public Author(String name) {
         this.name = name;
     }
 
-    public Author(Integer id, String name, List<Book> books) {
-        this.id = id;
+    public Author(String name, List<Book> books) {
         this.name = name;
         this.books = books;
     }
 
-    public Author(Integer id, String name, Date dateOfBirth, Boolean isAlive, List<Book> books) {
-        this.id = id;
+    public Author(String name, Date dateOfBirth, Boolean isAlive, List<Book> books) {
         this.name = name;
         this.dateOfBirth = dateOfBirth;
         this.isAlive = isAlive;
