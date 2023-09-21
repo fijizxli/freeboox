@@ -66,10 +66,23 @@ public class Book {
         this.numberOfPages = numberOfPages;
     }
 
-    public Book(Long id, String title, Author author) {
-        this.id = id;
+    public Book(String title) {
+        this.title = title;
+    }
+    public Book(String title, Author author) {
         this.title = title;
         this.author = author;
+    }
+
+    public Book(String title, String coverPath) {
+        this.title = title;
+        this.coverPath = coverPath;
+    }
+
+    public Book(String title, Author author, String coverPath) {
+        this.title = title;
+        this.author = author;
+        this.coverPath = coverPath;
     }
 
     public Book() {
