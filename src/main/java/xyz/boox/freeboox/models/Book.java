@@ -13,9 +13,7 @@ public class Book {
     @ManyToOne
     private Author author;
     private Integer numberOfPages;
-
-    //private Image cover;
-
+    private String coverPath;
 
     public Long getId() {
         return id;
@@ -57,8 +55,11 @@ public class Book {
         this.author = author;
     }
 
-    public Book(Long id, String title, String description, Integer rating, Author author, Integer numberOfPages) {
-        this.id = id;
+    public String getCoverPath() {
+        return coverPath;
+    }
+
+    public Book(String title, String description, Integer rating, Author author, Integer numberOfPages) {
         this.title = title;
         this.description = description;
         this.author = author;
