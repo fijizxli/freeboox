@@ -7,9 +7,8 @@ import java.util.List;
 @Entity
 public class Author {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
-
-    private Integer id;
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    private Long id;
     private String name;
     private Date dateOfBirth;
     private Boolean isAlive;
