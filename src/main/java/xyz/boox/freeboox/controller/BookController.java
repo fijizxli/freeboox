@@ -16,14 +16,8 @@ public class BookController {
     @Autowired
     private BookService bs;
 
-    /*
-    @Autowired
-    private BookRepository br;
-     */
-
     @GetMapping("/books/{bookid}")
     public String bookDetails(@PathVariable("bookid") long bookid, Model model) {
-        //Optional<Book> book = br.findById(bookid);
         Book book = bs.findById(bookid);
         model.addAttribute("b", book);
         return "book";
