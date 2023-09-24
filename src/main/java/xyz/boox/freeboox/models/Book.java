@@ -9,6 +9,8 @@ public class Book {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
     private String title;
+
+    @Column(length = 3000)
     private String description;
     @ManyToOne
     private Author author;
