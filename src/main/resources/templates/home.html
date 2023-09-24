@@ -3,10 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <title>homepage</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
 </head>
 <body>
+    <!--TODO: list view / grid view-->
     <h1>
-        homepage
+       freeboox - home
     </h1>
+    <table>
+        <thead>
+            <td>title</td>
+            <td>author</td>
+            <td>pages</td>
+        </thead>
+        <tbody th:each="books: ${books}">
+        <span th:if="${(books.id % 2) == 0}">
+            <tr style="background-color: lightcyan;">
+                <td><a th:href="@{/books/{id}(id=${books.id})}" th:text="${books.title}"></a></td>
+                <td th:text="${books.author}"><i>book author</i></td>
+                <td th:text="${books.numberOfPages}">book pages</td>
+            </tr>
+        </span>
+        <span th:unless="${(books.id % 2) == 0}">
+            <tr style="background-color: lemonchiffon;" class="teszt">
+                <td><a th:href="@{/books/{id}(id=${books.id})}" th:text="${books.title}"></a></td>
+                <td th:text="${books.author}"><i>book author</i></td>
+                <td th:text="${books.numberOfPages}">book pages</td>
+            </tr>
+        </span>
+        </tbody>
+    </table>
 </body>
 </html>
