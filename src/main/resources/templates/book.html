@@ -7,12 +7,12 @@
 </head>
 <body>
     <h1 th:text="${b.title}"><b>book title</b></h1>
+    <a th:href="@{/pdfs/{pdf}(pdf=${b.downloadPath})}"><img class="qrbook" th:src="@{/qrcodes/{code}(code=${b.qrCodePath})}"></a>
     <h3 th:text="${b.author}"><i>book author</i></h3>
     <h3 th:text="${b.numberOfPages}"><i>book pages</i></h3>
     <span th:if="${b.coverPath != null}">
         <img th:src="@{/covers/{cover}(cover=${b.coverPath})}">
     </span>
     <p th:text="${b.description}">desc</p>
-
 </body>
 </html>
