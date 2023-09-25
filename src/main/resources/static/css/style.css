@@ -4,16 +4,18 @@ html {
 }
 
 body {
-    background-color: gainsboro;
+    background-color: lightslategray;
+    color: darkslategray;
     padding: 1em;
 }
 
 table {
+    color: black;
     margin-left:auto;
     margin-right:auto;
     font-size: 1rem;
     table-layout: fixed;
-    width: 40%;
+    width: 70%;
     border-collapse: collapse;
     border-bottom: 1px black solid;
     border-top: 1px black solid;
@@ -27,11 +29,22 @@ td {
     overflow: hidden;
 }
 
+.qrhome {
+    height: 4rem;
+    width: 4rem;
+}
+
+.qrhome:hover{
+    opacity: 0.5;
+}
+
+.qrbook {
+    height: 10rem;
+    width: 10rem;
+}
+
+
 thead {
     font-weight: bold;
     border: 2px black solid;
-}
-
-.teszt:hover {
-    background-color: yellow;
 }
