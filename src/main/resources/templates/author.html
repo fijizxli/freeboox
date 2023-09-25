@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Author</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+</head>
+<body>
+    <h1 th:text="${a.name}"><b>author name </b></h1>
+    <h3 th:text="${a.dateOfBirth}">date of birth</h3>
+    <span th:if="${a.isAlive}">
+        <h4>alive</h4>
+    </span>
+    <span th:unless="${a.isAlive}">
+        <h4>dead</h4>
+    </span>
+    <table>
+        <thead>
+            <td>title</td>
+            <td>pages</td>
+            <td>download</td>
+        </thead>
+        <tbody th:each="books: ${a.books}">
+            <span th:if="${(books.id % 2) == 0}">
+                <tr style="background-color: lightcyan;">
+                    <td><a th:href="@{/books/{id}(id=${books.id})}" th:text="${books.title}"></a></td>
+                    <td th:text="${books.numberOfPages}">book pages</td>
+                    <td><a th:href="@{/pdfs/{pdf}(pdf=${books.downloadPath})}" th:text="${books.downloadPath}"></a></td>
+                </tr>
+            </span>
+            <span th:unless="${(books.id % 2) == 0}">
+                <tr style="background-color: lemonchiffon;">
+                    <td><a th:href="@{/books/{id}(id=${books.id})}" th:text="${books.title}"></a></td>
+                    <td th:text="${books.numberOfPages}">book pages</td>
+                    <td><a th:href="@{/pdfs/{pdf}(pdf=${books.downloadPath})}" th:text="${books.downloadPath}"></a></td>
+                </tr>
+            </span>
+        </tbody>
+    </table>
+
+</body>
+</html>
