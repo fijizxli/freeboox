@@ -40,7 +40,7 @@ public class Author {
         this.dateOfBirth = dateOfBirth;
     }
 
-    public Boolean getAlive() {
+    public Boolean getIsAlive() {
         return isAlive;
     }
 
@@ -48,8 +48,17 @@ public class Author {
         isAlive = alive;
     }
 
+    public List<Book> getBooks() {
+        return books;
+    }
+
     public Author(String name) {
         this.name = name;
+    }
+
+    public Author(String name, Boolean isAlive) {
+        this.name = name;
+        this.isAlive = isAlive;
     }
 
     public Author(String name, List<Book> books) {
