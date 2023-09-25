@@ -15,20 +15,23 @@
             <td>title</td>
             <td>author</td>
             <td>pages</td>
+            <td>download</td>
         </thead>
         <tbody th:each="books: ${books}">
         <span th:if="${(books.id % 2) == 0}">
-            <tr style="background-color: lightcyan;">
+            <tr style="background-color: lightblue;">
                 <td><a th:href="@{/books/{id}(id=${books.id})}" th:text="${books.title}"></a></td>
                 <td th:text="${books.author}"><i>book author</i></td>
                 <td th:text="${books.numberOfPages}">book pages</td>
+                <td><a th:href="@{/pdfs/{pdf}(pdf=${books.downloadPath})}"><img class="qrhome" th:src="@{/qrcodes/{code}(code=${books.qrCodePath})}"></a></td>
             </tr>
         </span>
         <span th:unless="${(books.id % 2) == 0}">
-            <tr style="background-color: lemonchiffon;" class="teszt">
+            <tr style="background-color: lightgreen;">
                 <td><a th:href="@{/books/{id}(id=${books.id})}" th:text="${books.title}"></a></td>
                 <td th:text="${books.author}"><i>book author</i></td>
                 <td th:text="${books.numberOfPages}">book pages</td>
+                <td><a th:href="@{/pdfs/{pdf}(pdf=${books.downloadPath})}"><img class="qrhome" th:src="@{/qrcodes/{code}(code=${books.qrCodePath})}"></a></td>
             </tr>
         </span>
         </tbody>
